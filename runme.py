@@ -23,7 +23,6 @@ for i in max_depth_list:
 	machine = RandomForestClassifier(n_estimators=11, criterion='gini', max_depth=i)
 	accuracy_score, confusion_matrix = kfold_template.run_kfold(4, data, target, machine)
 	results_list.append(['Random Forest ',accuracy_score,str(i)])
-	#print(accuracy_score)
 	for i in confusion_matrix:
 		print(i)
 
@@ -31,7 +30,6 @@ for k in n_estimators_list:
 	machine = RandomForestClassifier(n_estimators=k, criterion='gini', max_depth=10)
 	accuracy_score, confusion_matrix = kfold_template.run_kfold(4, data, target, machine)
 	results_list.append(['Random Forest ',accuracy_score,str(k)])
-	#print(accuracy_score)
 	for i in confusion_matrix:
 		print(i)
 
